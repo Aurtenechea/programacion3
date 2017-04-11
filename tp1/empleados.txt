@@ -1,0 +1,2 @@
+juani - sarasa - 10111000 - hombre - 222 - 15000 - ./fotos/juani-sarasa.jpg
+igna - aurte - 333333 - hombre - 3333 - 333333 - ./fotos/igna-aurte.jpg
