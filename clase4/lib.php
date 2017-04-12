@@ -3,6 +3,8 @@
     ini_set('display_errors', TRUE);
     ini_set('display_startup_errors', TRUE);
 
+    const SLASH = "/";
+
     function vd($array){
         echo "<pre>";
         var_dump($array);
@@ -24,10 +26,10 @@
         }
     }
 
-    function moveTempToPerm($files, $permDir, $newName){
-      if( !defined(SLASH) )
-        const FOLDER = "/";
 
+    //if( !defined(SLASH) )
+     // const SLASH = "/";
+    function moveTempToPerm($files, $permDir, $newName){
       //valido parametros
       if( empty($files) || empty($permDir) || empty($newName) || !isset($files['name']) || !isset($files['tmp_name']))
         return "";
@@ -40,10 +42,12 @@
       $nuevaRuta =  $permDir . SLASH . $newName .".".  $ext;
       //si existe lo mando a la carpeta backup
       if(file_exists($nuevaRuta)){
-        if(!is_dir($permDir.SLASH."backup"))
+        if(!is_dir($permDir.SLASH."backup")){
           mkdir($permDir.SLASH."backup");
-        $nuevaRuta = $permDir . SLASH . "backup" . SLASH . $newName ."_". date("Y_m_d_H:i:s") .".".  $ext;
+        }
+        $nuevaRuta = $permDir . SLASH . "backup" . SLASH . $newName ."_". time() .".".  $ext;
       }
+      echo $nuevaRuta;
       if( move_uploaded_file($files['tmp_name'], $nuevaRuta) )
         return $nuevaRuta;
       else
