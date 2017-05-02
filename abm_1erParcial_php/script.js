@@ -1,7 +1,7 @@
 window.onload = function(){
 
     console.log("loaded");
-    var btnDelete = document.getElementsByClassName('eliminar');
+        var btnDelete = document.getElementsByClassName('eliminar');
 
     for (var i=0; i < btnDelete.length; i++) {
         btnDelete[i].onclick = function(){

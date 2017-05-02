@@ -12,49 +12,48 @@
 
 
     <html>
-    <head>
-    	<title>Ejemplo de ALTA-LISTADO - con archivos -</title>
+        <head>
+        	<title>Ejemplo de ALTA-LISTADO - con archivos -</title>
 
-    	<meta charset="UTF-8">
-    	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    	<link rel="stylesheet" type="text/css" href="estilo.css"> -->
-        <script src="script.js"> </script>
-    </head>
+        	<meta charset="UTF-8">
+        	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        	<link rel="stylesheet" type="text/css" href="estilo.css"> -->
+            <script src="script.js"> </script>
+        </head>
     <body>
 
     	<div class="container">
 
     		<div class="CajaInicio animated bounceInRight">
-    			<h1>Listado de PERSONAS</h1>
+    		    <h1>Listado de PERSONAS</h1>
 
-    <?php
+                <?php
 
-    $ArrPersonas = Persona::getAll();
+                $ArrPersonas = Persona::getAll();
 
-    echo "<table class='table'>
-    		<thead>
-    			<tr>
-    				<th> DNI </th>
-    				<th> NOMBRE </th>
-    				<th> APELLIDO </th>
-                    <th>  </th>
-    			</tr>
-    		</thead>";
+                echo "<table class='table'>
+                		<thead>
+                			<tr>
+                				<th> DNI </th>
+                				<th> NOMBRE </th>
+                				<th> APELLIDO </th>
+                                <th>  </th>
+                			</tr>
+                		</thead>";
 
-    	foreach ($ArrPersonas as $persona){
+            	foreach ($ArrPersonas as $persona){
+            		echo " 	<tr>
+            					<td>".$persona->getDni()."</td>
+            					<td>".$persona->getNombre()."</td>
+                                <td>".$persona->getApellido()."</td>
+                                <td> <button value='".$persona->getId()."' type='button' class='eliminar'>Borrar</button> </td>
+            				</tr>";
+            	}
+                echo "</table>";
+                ?>
 
-    		echo " 	<tr>
-    					<td>".$persona->getDni()."</td>
-    					<td>".$persona->getNombre()."</td>
-                        <td>".$persona->getApellido()."</td>
-                        <td> <button value='".$persona->getId()."' type='button' class='eliminar'>Borrar</button> </td>
-    				</tr>";
-    	}
-    echo "</table>";
-    ?>
-
-            <button value='' type='button' id='insert'>Insertar</button>
-    		</div>
-    	</div>
+                <button value='' type='button' id='insert'>Insertar</button>
+    		</div> <!-- </CajaInicio -->
+    	</div> <!--  </container -->
     </body>
     </html>

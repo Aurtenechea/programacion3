@@ -5,7 +5,6 @@ require_once("lib.php");
 
 //  </Dependencies ----------------------------------------------
 
-
 class Persona{
     // <attr ----------------------------------------------------
     private $id;
@@ -29,15 +28,15 @@ class Persona{
 
     public function save(){
         try{
-        $dba = DBAccess::getDBAccessObj();
-        $consulta = $dba->getQueryObj("CALL InsertarPersona (:nombre,:apellido,:dni)");
-		$consulta->bindValue(':nombre',$this->nombre, PDO::PARAM_STR);
-		$consulta->bindValue(':apellido', $this->apellido, PDO::PARAM_STR);
-		$consulta->bindValue(':dni', $this->dni, PDO::PARAM_STR);
-        $consulta->execute();
-        $consulta = $dba->getQueryObj("select * from persona where dni = ".$this->dni);
-        $consulta->execute();
-		$personaBuscada= $consulta->fetchObject('persona');
+            $dba = DBAccess::getDBAccessObj();
+            $consulta = $dba->getQueryObj("CALL InsertarPersona (:nombre,:apellido,:dni)");
+    		$consulta->bindValue(':nombre',$this->nombre, PDO::PARAM_STR);
+    		$consulta->bindValue(':apellido', $this->apellido, PDO::PARAM_STR);
+    		$consulta->bindValue(':dni', $this->dni, PDO::PARAM_STR);
+            $consulta->execute();
+            $consulta = $dba->getQueryObj("select * from persona where dni = ".$this->dni);
+            $consulta->execute();
+    		$personaBuscada= $consulta->fetchObject('persona'); //devuelve una persona
         }catch(Exception $e){
             throw $e;
         }
