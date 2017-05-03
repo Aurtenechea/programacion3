@@ -38,11 +38,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarPersona`(IN `pnombre` VARCH
 INSERT INTO persona (nombre,apellido,dni)
 VALUES
 (pnombre,papellido,pdni)$$
-
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `BorrarPersona`(IN `idp` INT(18))
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `BorrarContainer`(IN `pnumero` INT(18))
     NO SQL
-delete from persona	WHERE id=idp$$
+delete from container	WHERE numero=pnumero$$
+DELIMITER ;
+
+
 --
 --
 -- CREATE DEFINER=`root`@`localhost` PROCEDURE `ModificarPersona`(IN `pid` INT, IN `pnombre` VARCHAR(50), IN `papellido` VARCHAR(50), IN `pfoto` VARCHAR(50))
@@ -53,10 +57,11 @@ delete from persona	WHERE id=idp$$
 -- 				foto=pfoto
 -- 				WHERE id=pid$$
 --
-
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TraerTodasLasPersonas`()
     NO SQL
 select * from persona$$
+DELIMITER ;
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `TraerUnaPersona`(IN `idp` INT(18))
     NO SQL
