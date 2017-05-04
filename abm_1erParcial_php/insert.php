@@ -5,15 +5,22 @@ const FOLDER = "./fotos";
 
 // const SLASH = "/";
 
-if(isset($_POST['enviar'])){
+if(isset($_POST['enviar']) && isset($_POST['name']) && isset($_POST['lastname']) isset($_POST['dni']) && isset($_FILES['file'])){
     $nombre = $_POST['name'];
     $archivo = $_FILES['file'];
+    $apellido = $_POST['lastname'];
+    $dni = $_POST['dni'];
+
     //vd($_POST);
     //vd($_FILES);
 
     // if(empty( moveTempToPerm($_FILES['file'], FOLDER,'miArchivo' )) );
+
+
+    // $nombreNuevoArchivo
     try{
-        moveTempToPerm($_FILES['file'], FOLDER, $nombre );
+        $direccionFoto = moveTempToPerm($_FILES['file'], FOLDER, $nombre );
+        
         echo "listo!";
     }catch(exception $e){
         echo $e->getMessage();
