@@ -1,9 +1,9 @@
 <?php
-class MainController
+class HomeController
 {
-    public function index(){
+    public function actionIndex($id){
 
-        $user = User::find(2);
+        $user = User::find($id);
 
         /* response se puede usar porque desde el index fue
         incluida (y este archivo tamb).
@@ -17,7 +17,7 @@ class MainController
 
     }
 
-    public function about(){
+    public function actionAbout(){
         echo "Hola desde el about";
     }
 }

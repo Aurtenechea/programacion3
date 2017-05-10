@@ -6,11 +6,13 @@
     */
 chdir( dirname( __DIR__ ) );
 
+/*  define las carpetas como constantes. */
 define("SYS_PATH", "lib/");
 define("APP_PATH", "app/");
 
+/*  antes de llamar a algun metodo se incluyen todos los archivos. */
 require( SYS_PATH . "init.php");
 
 
-
+/*  punto de partida de la aplicacion. */
 $app = new App;
