@@ -20,7 +20,7 @@
                 <div class="col-md-4" >
 
                     <label for="user" class="text-primary">User:</label><br>
-                    <input type="text" id="usuario" class="input-sm" value="nacho">
+                    <input type="text" id="usuario" class="input-sm" value=<?php  if( isset($_COOKIE['email']) ){echo $_COOKIE['email'] . " (desde cookie)";}?>>
                     <br><br>
                     <label for="pass" class="text-primary">Pass:</label><br>
                     <input type="password" id="pass" class="input-sm" value="clavesecreta">

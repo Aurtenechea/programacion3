@@ -78,12 +78,12 @@ function mostrar(){
     );
     funcionAJAX.then( ajaxSuccess, ajaxError); // params: donecallbak, fail callback
 
-    function ajaxSuccess(dato){
-        $("#mostrar").html(dato);
+    function ajaxSuccess( dato ){
+        $("#mostrar").html( dato );
         // $('#usuario').val("sarasa");
         console.log("ajaxSucces: " + dato);
     }
-    function ajaxError(error){
+    function ajaxError( error ){
         console.log("ajaxError: " + error);
     }
 }
