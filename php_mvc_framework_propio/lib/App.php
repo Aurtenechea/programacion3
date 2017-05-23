@@ -44,7 +44,7 @@ class App
             con los parametros del array del segundo parametro */
         call_user_func_array( [$this->controller, $this->method], $this->params );
 
-        // print_r($this->params);
+        //  print_r($this->params);
     }
 
 
