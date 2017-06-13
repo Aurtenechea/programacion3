@@ -4,7 +4,7 @@ window.onload = function(){
         var btnDelete = document.getElementsByClassName('eliminar');
 
     for (var i=0; i < btnDelete.length; i++) {
-        btnDelete[i].onclick = function(){
+            btnDelete[i].onclick = function(){
             console.log(this);
             window.location.assign("router.php"+"?action=delete&id="+this.value)
         };

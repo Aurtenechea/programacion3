@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src='./upload.js'></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <form class="form-ingreso" onsubmit="GuardarCD();return false" enctype="multipart/form-data" id="formcd">
+            <h2 class="form-ingreso-heading">CD</h2>
+            <input type="file" id="foto" name="foto" >
+        <button  class="btn btn-lg btn-success btn-block" type="submit"><span class="glyphicon glyphicon-floppy-save">&nbsp;&nbsp;</span>Guardar </button>
+
+      </form>
+
+    </div> <!-- /container -->
+
+</body>
+</html>
